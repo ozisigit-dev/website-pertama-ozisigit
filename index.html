@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+   body {
+            /* Background Gelap Pekat (Hampir Hitam) */
+            background-color: #08afe2; 
+            
+            /* Tulisan jadi putih agar terbaca */
+            color: #0daddd;
+            
+            /* Tetap pertahankan layout flexbox kemarin */
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        h1 {
+            /* Warna Emas Mewah */
+            color: #ffffff; 
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            /* Warna Abu-abu terang */
+            color: #0b0b0b; 
+        }
+
+        button {
+            /* Tombol Emas */
+            background-color: #ff0000d8;
+            
+            /* Tulisan di tombol warna hitam biar kontras */
+            color: #000000;
+            
+            padding: 15px 32px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px; /* Membuat tombol jadi lonjong (kapsul) */
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        button:hover {
+            /* Saat disentuh jadi agak oranye */
+            background-color: #ffcc00;
+            transform: scale(1.1); /* Membesar lebih banyak */
+        }
+        .gambar-keren {
+            width: 300px;        /* Lebar gambar dibatasi 300 piksel */
+            border-radius: 15px; /* Sudut melengkung */
+            margin: 20px 0;      /* Beri jarak atas-bawah biar tidak nempel teks */
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2); /* Bayangan biar timbul */
+        }
+    </style>
+</head>
+<body>
+   <h1 id="judul">Alhamdulillah, Akhirnya Jadi Programmer!</h1>
+    <p><img src="foto.jpg" alt="Foto Pertamaku" class="gambar-keren">.</p>
+    <button onclick="ubahTampilan()">Klik Saya Dong</button>
+    <script>
+function ubahTampilan() {
+            let body = document.body;
+            let judul = document.getElementById('judul');
+
+            // Cek: Apakah background warnanya sedang gelap?
+            if (body.style.backgroundColor === "rgb(44, 62, 80)") {
+                
+                // JIKA GELAP -> KEMBALIKAN KE BIRU (Reset)
+                body.style.backgroundColor = "#f0f2f5"; // Atau warna biru langit Anda tadi
+                judul.style.color = "#1a73e8"; // Balik ke biru
+                judul.innerHTML = "Alhamdulillah, Akhirnya Jadi Programmer!";
+                
+            } else {
+                
+                // JIKA TIDAK GELAP -> UBAH JADI GELAP (Mode Malam)
+                body.style.backgroundColor = "#2c3e50";
+                judul.style.color = "yellow";
+                judul.innerHTML = "Wah, Saya Sudah Bisa JavaScript! 🚀";
+                
+            }
+        }
+        }
+    </script>
+</body>
+</html>
